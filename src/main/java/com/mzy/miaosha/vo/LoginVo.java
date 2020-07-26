@@ -22,7 +22,6 @@ public class LoginVo {
 
     /*用户md5后的密码*/
     @NotNull
-    @Length(min = 32)
     String password;
 
     public String getMobile() {

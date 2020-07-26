@@ -32,7 +32,7 @@ public class DruidConfig {
 	private boolean testOnReturn;
 	private boolean poolPreparedStatements;
 	private int maxOpenPreparedStatements;
-	
+
 	@Bean
 	public ServletRegistrationBean druidSverlet() {
 		ServletRegistrationBean reg = new ServletRegistrationBean();
@@ -44,7 +44,7 @@ public class DruidConfig {
 		reg.addInitParameter("slowSqlMillis", "1000");
 		return reg;
 	}
-	
+
 	@Bean
 	public DataSource druidDataSource() {
 		 	DruidDataSource datasource = new DruidDataSource();
@@ -71,7 +71,7 @@ public class DruidConfig {
 	        }
 	        return datasource;
 	}
-	
+
 	public String getUrl() {
 		return url;
 	}
@@ -180,5 +180,5 @@ public class DruidConfig {
 	public void setMaxOpenPreparedStatements(int maxOpenPreparedStatements) {
 		this.maxOpenPreparedStatements = maxOpenPreparedStatements;
 	}
-	
+
 }
