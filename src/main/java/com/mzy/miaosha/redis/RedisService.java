@@ -21,7 +21,7 @@ public class RedisService {
     /**
      * 获取当个对象
      */
-    public <T> T get(KeyPrefix prefix, String key, Class<T> clazz) {
+    public  <T> T get(KeyPrefix prefix, String key, Class<T> clazz) {
         Jedis jedis = null;
         try {
             jedis = jedisPool.getResource();
