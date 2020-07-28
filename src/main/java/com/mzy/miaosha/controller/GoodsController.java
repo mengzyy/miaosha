@@ -1,7 +1,5 @@
 package com.mzy.miaosha.controller;
 
-import java.util.List;
-
 import com.mzy.miaosha.domin.MiaoshaUser;
 import com.mzy.miaosha.redis.GoodsKey;
 import com.mzy.miaosha.redis.RedisService;
@@ -19,11 +17,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.thymeleaf.context.IWebContext;
+import org.thymeleaf.context.WebContext;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
-import org.thymeleaf.context.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Controller
 @RequestMapping("/goods")

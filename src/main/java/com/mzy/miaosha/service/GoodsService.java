@@ -1,35 +1,34 @@
 package com.mzy.miaosha.service;
 
-import java.util.List;
-
 import com.mzy.miaosha.dao.GoodsDao;
 import com.mzy.miaosha.domin.MiaoshaGoods;
 import com.mzy.miaosha.vo.GoodsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 
 @Service
 public class GoodsService {
-	
-	@Autowired
-	GoodsDao goodsDao;
-	
-	public List<GoodsVo> listGoodsVo(){
-		return goodsDao.listGoodsVo();
-	}
 
-	public GoodsVo getGoodsVoByGoodsId(long goodsId) {
-		return goodsDao.getGoodsVoByGoodsId(goodsId);
-	}
+    @Autowired
+    GoodsDao goodsDao;
 
-	public void reduceStock(GoodsVo goods) {
-		MiaoshaGoods g = new MiaoshaGoods();
-		g.setGoodsId(goods.getId());
-		goodsDao.reduceStock(g);
-	}
-	
-	
-	
+    public List<GoodsVo> listGoodsVo() {
+        return goodsDao.listGoodsVo();
+    }
+
+    public GoodsVo getGoodsVoByGoodsId(long goodsId) {
+        return goodsDao.getGoodsVoByGoodsId(goodsId);
+    }
+
+    public boolean reduceStock(GoodsVo goods) {
+        MiaoshaGoods g = new MiaoshaGoods();
+        g.setGoodsId(goods.getId());
+        int i = goodsDao.reduceStock(g);
+        return i > 0;
+    }
+
+
 }
